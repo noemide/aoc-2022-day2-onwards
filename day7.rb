@@ -71,19 +71,30 @@ def get_and_write_node_value(node)
     return value
 end
 
-
-
-
 input = lines = File.readlines('input.txt')
 root_node = Tree::TreeNode.new("/")
 root_node = build_tree(input[1..-1],root_node)
 get_and_write_node_value(root_node)
 
+=begin Part 1
 small_dirs = 0
 root_node.each do |node|
     if !node.leaf? && node.content <= 100000
         small_dirs += node.content
     end
-end
-
+end 
 puts small_dirs
+=end
+
+total_disc_size = 70000000
+required_disc_space = 30000000
+curr_free_space = total_disc_size - root_node.content
+missing_space = required_disc_space-curr_free_space
+cand_dirs = []
+root_node.each do |node|
+    if !node.leaf? && node.content >= missing_space
+        cand_dirs.push node.content
+    end
+end 
+dir_size = cand_dirs.sort[0]
+puts dir_size
