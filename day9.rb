@@ -1,4 +1,4 @@
-def move_tail (h_pos,t_pos)
+def move_knot (h_pos,t_pos)
 
     dist_x = h_pos[0]-t_pos[0]
     dist_y = h_pos[1]-t_pos[1]
@@ -30,10 +30,15 @@ end
 input = File.readlines('input.txt')
 
 pos_covered = []
+rope = []
 
-h_pos = [0,0]
-t_pos = [0,0]
-pos_covered.append(pos_to_string(t_pos))
+i = 0
+while i < 10
+    rope[i] = [0,0]
+    i += 1
+end
+
+pos_covered.append(pos_to_string(rope[9]))
 
 input.each do |line|
 
@@ -45,34 +50,50 @@ input.each do |line|
     when "R"
         while counter < steps
             #move head
-            h_pos[0] = h_pos[0]+1
-            t_pos = move_tail(h_pos,t_pos)
-            pos_covered.append(pos_to_string(t_pos))
+            rope[0][0] = rope[0][0]+1
+            i = 1
+            while i < 10
+                rope[i] = move_knot(rope[i-1],rope[i])
+                i+=1
+            end
+            pos_covered.append(pos_to_string(rope[9]))
             counter += 1
         end
     when "L"
         while counter < steps
             #move head
-            h_pos[0] = h_pos[0]-1
-            t_pos = move_tail(h_pos,t_pos)
-            pos_covered.append(pos_to_string(t_pos))
+            rope[0][0] = rope[0][0]-1
+            i = 1
+            while i < 10
+                rope[i] = move_knot(rope[i-1],rope[i])
+                i+=1
+            end
+            pos_covered.append(pos_to_string(rope[9]))
             counter += 1
         end
     when "U"
         while counter < steps
             #move head
-            h_pos[1] = h_pos[1]+1
-            t_pos = move_tail(h_pos,t_pos)
-            pos_covered.append(pos_to_string(t_pos))
+            rope[0][1] = rope[0][1]+1
+            i = 1
+            while i < 10
+                rope[i] = move_knot(rope[i-1],rope[i])
+                i+=1
+            end
+            pos_covered.append(pos_to_string(rope[9]))
             counter += 1
         end
     when "D"
         while counter < steps
-            #move head
-            h_pos[1] = h_pos[1]-1
-            t_pos = move_tail(h_pos,t_pos)
-            pos_covered.append(pos_to_string(t_pos))
-            counter += 1
+           #move head
+           rope[0][1] = rope[0][1]-1
+           i = 1
+           while i < 10
+               rope[i] = move_knot(rope[i-1],rope[i])
+               i+=1
+           end
+           pos_covered.append(pos_to_string(rope[9]))
+           counter += 1
         end
     else
         puts "Error: Invalid direction "+direction
