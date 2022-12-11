@@ -1,3 +1,4 @@
+$multiple = 1
 class Monkey
 
     @@monkey_list = []
@@ -35,8 +36,15 @@ class Monkey
             puts "Error: Unknown operator "+operator
             return nil
         end
-        #Ruby integer division already rouns down
-        return item / 3
+        # part 1 
+        #Ruby integer division already rounds down
+        #return item / 3
+        if (item%$multiple == 0)
+            return $multiple
+        else
+            return item%$multiple
+        end
+        
     end
 
     def throw_item
@@ -70,6 +78,7 @@ class Monkey
 end
 
 def parse_monkey(lines)
+    #for part 2
     #Find monkey number
     monkey_no_raw = lines[0].scan(/\d+/)
     monkey_no = monkey_no_raw[0].to_i
@@ -90,6 +99,7 @@ def parse_monkey(lines)
     #get false monkey
     monkey.false_monkey_no = lines[5].scan(/\d+/)[0].to_i
     Monkey.monkey_list[monkey_no] = monkey
+    return monkey.divisor
 end
 
 def do_round
@@ -98,17 +108,28 @@ def do_round
     end
 end
 
-
+divisors = []
 input = File.readlines('input.txt')
 while !input.empty?
-    parse_monkey(input)
+    divisors.append(parse_monkey(input))
     input.shift(7)
 end
 
+divisors.each do |divisor|
+    $multiple = $multiple*divisor
+end
+puts $multiple
+
+
 round_counter = 0
-while round_counter < 20
+# part 1 
+#while round_counter < 20
+while round_counter < 10000
     do_round
     round_counter += 1
+    if round_counter%100 == 0
+        puts "Round: #{round_counter}"
+    end
 end
 
 
