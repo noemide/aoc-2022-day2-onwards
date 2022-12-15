@@ -50,6 +50,7 @@ input.each do |line|
     structures.append(structure)
 end
 
+max_y = max_y + 2
 rock  = []
 #"Draw" strcutures
 structures.each do |structure|
@@ -77,10 +78,12 @@ end
 
 not_air = rock.dup
 
-into_the_abyss = false
+#into_the_abyss = false
+hit_the_ceiling = false
 sand_counter = 0
 curr = [-1,-1]
-while(into_the_abyss == false)
+#while(into_the_abyss == false)
+while(hit_the_ceiling == false)
     #Simulate one piece of sand
     #Because 0,0 is in the upper left corner, sand falls "up"
     curr[0] = sand_source[0]
@@ -88,16 +91,22 @@ while(into_the_abyss == false)
     next_step = sand_source.dup
     while(!next_step.nil?)
         #test for limit
-        if(next_step[1]> max_y)
+=begin  if(next_step[1]> max_y)
             into_the_abyss = true
             break
-        end
+        end 
+=end
         curr = next_step.dup
         next_step = nil
         cand = [-1,-1]
         #Try to fall straight down
         cand[0] = curr[0]
         cand[1] = curr[1]+1
+        #Test if we hit the floor
+        if(cand[1] == max_y)
+            break
+        end
+        #else fall down
         if(!not_air.include?(cand.to_s))
             next_step = cand
         else
@@ -116,12 +125,23 @@ while(into_the_abyss == false)
             end
         end
     end
+    not_air.append(curr.to_s)
+    sand_counter += 1
+    if(curr == sand_source)
+        hit_the_ceiling = true
+    end
+    if sand_counter%100 == 0
+        puts sand_counter
+    end
+    
+=begin part 1
     if(!into_the_abyss)
         not_air.append(curr.to_s)
         sand_counter += 1
         if sand_counter%100 == 0
             puts sand_counter
         end
-    end
+    end 
+=end
 end
 puts sand_counter
