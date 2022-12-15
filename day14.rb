@@ -4,14 +4,14 @@ def draw_line(dim, coord, target)
         # "we go down or left"
         curr = coord
         while(curr[dim]>=target[dim])
-            rock.append(curr.dup)
+            rock.append(curr.to_s)
             curr[dim] = curr[dim]-1
         end
     elsif(target[dim]>coord[dim])
         #puts "we go up or right"
         curr = coord
         while(curr[dim]<=target[dim])
-            rock.append(curr.dup)
+            rock.append(curr.to_s)
             curr[dim] = curr[dim]+1
         end
     end
@@ -98,26 +98,26 @@ while(into_the_abyss == false)
         #Try to fall straight down
         cand[0] = curr[0]
         cand[1] = curr[1]+1
-        if(!not_air.include?(cand))
+        if(!not_air.include?(cand.to_s))
             next_step = cand
         else
             #Try to fall down and left
             cand[0] = curr[0]-1
             cand[1] = curr[1]+1
-            if(!not_air.include?(cand))
+            if(!not_air.include?(cand.to_s))
                 next_step = cand
             else
                 #Try to fall down and right
                 cand[0] = curr[0]+1
                 cand[1] = curr[1]+1
-                if(!not_air.include?(cand))
+                if(!not_air.include?(cand.to_s))
                     next_step = cand
                 end
             end
         end
     end
     if(!into_the_abyss)
-        not_air.append(curr.dup)
+        not_air.append(curr.to_s)
         sand_counter += 1
         if sand_counter%100 == 0
             puts sand_counter
