@@ -1,0 +1,561 @@
+graph RGL__AdjacencyGraph {
+    "JX(22)" [
+        fontsize = 8,
+        label = "JX(22)"
+    ]
+
+    "AA(0)" [
+        fontsize = 8,
+        label = "AA(0)"
+    ]
+
+    "IK(8)" [
+        fontsize = 8,
+        label = "IK(8)"
+    ]
+
+    "WH(12)" [
+        fontsize = 8,
+        label = "WH(12)"
+    ]
+
+    "CF(18)" [
+        fontsize = 8,
+        label = "CF(18)"
+    ]
+
+    "QQ(11)" [
+        fontsize = 8,
+        label = "QQ(11)"
+    ]
+
+    "VK(6)" [
+        fontsize = 8,
+        label = "VK(6)"
+    ]
+
+    "WL(20)" [
+        fontsize = 8,
+        label = "WL(20)"
+    ]
+
+    "DS(9)" [
+        fontsize = 8,
+        label = "DS(9)"
+    ]
+
+    "WM(14)" [
+        fontsize = 8,
+        label = "WM(14)"
+    ]
+
+    "EZ(16)" [
+        fontsize = 8,
+        label = "EZ(16)"
+    ]
+
+    "LB(17)" [
+        fontsize = 8,
+        label = "LB(17)"
+    ]
+
+    "BV(13)" [
+        fontsize = 8,
+        label = "BV(13)"
+    ]
+
+    "HG(19)" [
+        fontsize = 8,
+        label = "HG(19)"
+    ]
+
+    "UY(5)" [
+        fontsize = 8,
+        label = "UY(5)"
+    ]
+
+    "IT(10)" [
+        fontsize = 8,
+        label = "IT(10)"
+    ]
+
+    "JX(22)" -- "AA(0)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "IK(8)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "WH(12)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "CF(18)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "QQ(11)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "VK(6)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "WL(20)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "JX(22)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "IK(8)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "WH(12)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "CF(18)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "QQ(11)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "VK(6)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "WL(20)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "AA(0)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "WH(12)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "CF(18)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "QQ(11)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "VK(6)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "WL(20)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "IK(8)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "CF(18)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "QQ(11)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "VK(6)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "WL(20)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "WH(12)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "QQ(11)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "VK(6)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "WL(20)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "CF(18)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "VK(6)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "WL(20)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "QQ(11)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "WL(20)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "VK(6)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "DS(9)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "WL(20)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "DS(9)" -- "WM(14)" [
+        fontsize = 8
+    ]
+
+    "DS(9)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "DS(9)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "DS(9)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "DS(9)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "DS(9)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "DS(9)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "WM(14)" -- "EZ(16)" [
+        fontsize = 8
+    ]
+
+    "WM(14)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "WM(14)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "WM(14)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "WM(14)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "WM(14)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "EZ(16)" -- "LB(17)" [
+        fontsize = 8
+    ]
+
+    "EZ(16)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "EZ(16)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "EZ(16)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "EZ(16)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "LB(17)" -- "BV(13)" [
+        fontsize = 8
+    ]
+
+    "LB(17)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "LB(17)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "LB(17)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "BV(13)" -- "HG(19)" [
+        fontsize = 8
+    ]
+
+    "BV(13)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "BV(13)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "HG(19)" -- "UY(5)" [
+        fontsize = 8
+    ]
+
+    "HG(19)" -- "IT(10)" [
+        fontsize = 8
+    ]
+
+    "UY(5)" -- "IT(10)" [
+        fontsize = 8
+    ]
+}
