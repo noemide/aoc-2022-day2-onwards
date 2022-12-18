@@ -57,12 +57,12 @@ end
 def plot_path(path,lengths)
     rep = []
     pos = 1
-    rep.append("#{path[0]}@#{node_values[path[0]]}")
+    rep.append("#{path[0]}")
     while pos < path.length-1
         v = path[pos]
         u = path[pos+1]
         length = lengths.get_weight(v,u)
-        rep.append("--#{length}->#{u}@#{node_values[u]}")
+        rep.append("--#{length}->#{u}")
         pos += 1
     end
     return rep.join
@@ -99,7 +99,76 @@ def find_best_path(graph,lengths,time_left,path_so_far,pressure_released_so_far)
             end
         end
     end
+    $overall_tested += 1
     return best_path,best_pressure
+end
+
+$best_overall = 0
+$overall_tested = 0
+def find_best_path_with_elephant(graph,lengths,my_time_left,elephant_time_left,my_path_so_far,elephant_path_so_far,pressure_released_so_far)
+    my_curr_node = my_path_so_far[-1]
+    elephant_curr_node = elephant_path_so_far[-1]
+    my_neighbors = graph.adjacent_vertices(my_curr_node)
+    elephant_neighbors = graph.adjacent_vertices(elephant_curr_node)
+    #Delete already opened valves
+    my_neighbors = my_neighbors.delete_if{ |n| my_path_so_far.include?(n) || elephant_path_so_far.include?(n)}
+    elephant_neighbors = elephant_neighbors.delete_if{|n| my_path_so_far.include?(n) || elephant_path_so_far.include?(n)}
+    #puts "neighbors for #{curr_node} are #{neighbors.inspect}"
+    my_best_path = my_path_so_far
+    elephant_best_path = elephant_path_so_far
+    best_pressure = pressure_released_so_far
+    my_neighbors.product(elephant_neighbors).each do |m, e|
+        unless (m == e)
+            #puts "Trying to move from #{curr_node} to #{n}"
+            my_time_left_at_neighbor = ((my_time_left-lengths.get_weight(my_curr_node,m))-1)
+            elephant_time_left_at_neighbor = ((elephant_time_left-lengths.get_weight(elephant_curr_node,e))-1)
+            unless my_time_left_at_neighbor <= 0 || elephant_time_left_at_neighbor <= 0
+               #Try moving to neighbor
+                pressure_released_at_m_e = pressure_released_so_far + (m.flow_rate*my_time_left_at_neighbor) + (e.flow_rate*elephant_time_left_at_neighbor)
+                my_path_with_n = my_path_so_far.dup.append(m)
+                elephant_path_with_n = elephant_path_so_far.dup.append(e)
+                my_path, e_path, m_e_value = find_best_path_with_elephant(graph,lengths,my_time_left_at_neighbor,elephant_time_left_at_neighbor, my_path_with_n,elephant_path_with_n, pressure_released_at_m_e)
+            end
+        else
+            #Edge case: only one valve remains
+            if((my_neighbors == elephant_neighbors) && my_neighbors.length == 1)
+                #Choose whoever has more time left
+                my_time_left_at_neighbor = ((my_time_left-lengths.get_weight(my_curr_node,m))-1)
+                elephant_time_left_at_neighbor = ((elephant_time_left-lengths.get_weight(elephant_curr_node,e))-1)
+                if my_time_left_at_neighbor >= elephant_time_left_at_neighbor
+                    unless my_time_left_at_neighbor <= 0
+                        pressure_released_at_m_e = pressure_released_so_far + (m.flow_rate*my_time_left_at_neighbor)
+                        my_path_with_n = my_path_so_far.dup.append(m)
+                        my_path = my_path_with_n
+                        e_path = elephant_path_so_far
+                        m_e_value = pressure_released_at_m_e
+                    end
+                else
+                    unless elephant_time_left_at_neighbor <= 0
+                        pressure_released_at_m_e = pressure_released_so_far + (e.flow_rate*elephant_time_left_at_neighbor)
+                        my_path = my_path_with_n
+                        e_path = elephant_path_so_far.dup.append(e)
+                        m_e_value = pressure_released_at_m_e
+                    end
+                end
+            end
+        end
+        if !m_e_value.nil? && m_e_value > best_pressure
+            #puts "so far best choice after #{curr_node} is #{n} with #{n_value}"
+             my_best_path = my_path
+             elephant_best_path = e_path
+             best_pressure = m_e_value
+         end
+    end
+    if best_pressure > $best_overall
+        $best_overall = best_pressure
+        puts "So far best: #{$best_overall}"
+    end
+    $overall_tested += 1
+    if ($overall_tested%100000 == 0)
+        puts $overall_tested
+    end
+    return my_best_path, elephant_best_path, best_pressure
 end
 
 
@@ -169,17 +238,22 @@ graph.each_vertex do |v|
 
 #puts lengths
 
-graph.write_to_graphic_file
+#graph.write_to_graphic_file
 # Set the step limit
 #Part 1
-step_limit = 30
+#step_limit = 30
 #Part 2
-#step_limit = 26
+step_limit = 26
 
 # Find the maximum value path starting from node "AA"
 #(graph,lengths,time_left,path_so_far,pressure_released_so_far
 path, max = find_best_path(graph, lengths, step_limit, [start],0)
 #puts plot_path(path,lengths)
-puts path.join
+#puts path.join
 puts max 
+puts $overall_tested
+
+# def find_best_path_with_elephant(graph,lengths,my_time_left,elephant_time_left,my_path_so_far,elephant_path_so_far,pressure_released_so_far)
+#my_path,e_path, pressure = find_best_path_with_elephant(graph,lengths,step_limit,step_limit,[start],[start],0)
+#puts pressure
 
